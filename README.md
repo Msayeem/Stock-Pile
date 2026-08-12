@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📦 StockPile
 
-## Getting Started
+A full-stack product & order management app — browse products, place orders, and manage your own listings, all with real authentication.
 
-First, run the development server:
+**🔗 Live App:** [stock-pile-neon.vercel.app](https://stock-pile-neon.vercel.app/)
+**⚙️ Backend Repo:** [StockPile-backend](https://github.com/Msayeem/StockPile-backend)
+
+---
+
+## 🧭 Overview
+
+StockPile is a simple, no-frills product and order management platform. Users can sign up, browse all available products, place orders on items they want, and manage the products they've personally listed — edit, update, or remove them anytime.
+
+Built as a full-stack project to explore modern authentication (Better Auth), Prisma 7's driver-adapter workflow, and a clean, consistent UI across every page.
+
+---
+
+## ✨ Features
+
+- 🔐 **Real Authentication** — Sign up and log in securely with [Better Auth](https://www.better-auth.com/)
+- 🛍️ **Browse Products** — View all products listed by every user, with live search
+- 🧾 **Place Orders** — Order any product in a click; view all your orders in one place
+- 🗂️ **Manage Your Products** — Add, edit, and delete only the products *you* created
+- 🖼️ **Product Images** — Every listing includes an image for a proper storefront feel
+- 📱 **Fully Responsive** — Clean experience across desktop and mobile
+- ⚡ **Polished UI/UX** — Loading skeletons, empty states, and toast notifications throughout
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend**
+- [Next.js](https://nextjs.org/) (App Router)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [HeroUI](https://www.heroui.com/) — component library
+- [Better Auth](https://www.better-auth.com/) — authentication
+- [Prisma ORM](https://www.prisma.io/) — auth data layer
+
+**Backend** *(separate repo)*
+- [Express.js](https://expressjs.com/)
+- [Prisma ORM](https://www.prisma.io/)
+- [PostgreSQL](https://www.postgresql.org/) (hosted on [Neon](https://neon.tech/))
+
+**Deployment**
+- Frontend → [Vercel](https://vercel.com/)
+- Backend → [Render](https://render.com/)
+- Database → [Neon](https://neon.tech/) (PostgreSQL)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v18+
+- A PostgreSQL database (local or hosted, e.g. [Neon](https://neon.tech/))
+- The [StockPile backend](https://github.com/Msayeem/StockPile-backend) running (locally or deployed)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Msayeem/StockPile-frontend.git
+cd StockPile-frontend
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+
+Create a `.env` file in the root directory:
+
+```env
+DATABASE_URL="postgresql://user:password@host:5432/dbname?schema=auth"
+NEXT_PUBLIC_SERVER_URL="http://localhost:5000"
+BETTER_AUTH_SECRET="your-generated-secret"
+BETTER_AUTH_URL="http://localhost:3000"
+```
+
+> 💡 Generate a secret with `openssl rand -base64 32`
+
+### 4. Set up the database
+
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+### 5. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser 🎉
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Related Repositories
 
-## Learn More
+| Repo | Description |
+|---|---|
+| **StockPile (this repo)** | Next.js frontend with Better Auth |
+| [StockPile-backend](https://github.com/Msayeem/StockPile-backend) | Express + Prisma + PostgreSQL REST API |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open source and available for learning purposes.
