@@ -31,7 +31,7 @@ Built as a full-stack project to explore modern authentication (Better Auth), Pr
 
 **Frontend**
 - [Next.js](https://nextjs.org/) (App Router)
-- [TypeScript](https://www.typescriptlang.org/)
+- [JavaScript](https://www.javascriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [HeroUI](https://www.heroui.com/) — component library
 - [Better Auth](https://www.better-auth.com/) — authentication
